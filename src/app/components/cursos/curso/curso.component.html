@@ -1,0 +1,57 @@
+<form [formGroup]="form" (ngSubmit)="guardarCurso()" class="mt-3">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i
+            class="fas fa-book"
+            [class.green-icon]="this.form.get('nombre').valid"
+            [class.red-icon]="
+              this.form.get('nombre').invalid && this.form.get('nombre').touched
+            "
+          ></i>
+        </div>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="nombre"
+        placeholder="Curso"
+        maxlength="50"
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i
+            class="fas fa-user-circle"
+            [class.green-icon]="this.form.get('profesorId').valid"
+            [class.red-icon]="
+              this.form.get('profesorId').invalid &&
+              this.form.get('profesorId').touched
+            "
+          ></i>
+        </div>
+      </div>
+      <ng-select
+        [items]="profesores"
+        bindLabel="nombre"
+        bindValue="id"
+        formControlName="profesorId"
+      ></ng-select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button
+      class="btn btn-success btn-lg btn-block"
+      [disabled]="form.invalid"
+      type="submit"
+    >
+      <i class="fas fa-database"></i> Aceptar
+    </button>
+  </div>
+</form>
