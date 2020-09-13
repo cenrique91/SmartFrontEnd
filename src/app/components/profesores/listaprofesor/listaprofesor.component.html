@@ -1,1 +1,33 @@
-<p>listaprofesor works!</p>
+<table class="table table-lg mt-3">
+  <th>Nombres</th>
+  <th>Apellidos</th>
+  <th>DNI</th>
+  <th>Fecha de Nacimiento</th>
+  <th>Direccion</th>
+  <th>Telefono</th>
+  <th>Correo</th>
+  <th>Acciones</th>
+  <tr *ngFor="let profesor of _profesorService.list">
+    <td>{{ profesor.nombres }}</td>
+    <td>{{ profesor.apellidos }}</td>
+    <td>{{ profesor.dni }}</td>
+    <td>{{ profesor.fechaNacimiento | date: 'dd/MM/yyyy' }}</td>
+    <td>{{ profesor.direccion }}</td>
+    <td>{{ profesor.telefono }}</td>
+    <td>{{ profesor.correo }}</td>
+    <td>
+      <i
+        class="far fa-edit fa-lg text-info"
+        (click)="editarProfesor(profesor)"
+        style="cursor: pointer"
+      ></i>
+    </td>
+    <td>
+      <i
+        class="far fa-trash-alt fa-lg text-danger"
+        (click)="eliminarProfesor(profesor.id)"
+        style="cursor: pointer"
+      ></i>
+    </td>
+  </tr>
+</table>

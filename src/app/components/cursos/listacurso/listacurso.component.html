@@ -1,1 +1,23 @@
-<p>listacurso works!</p>
+<table class="table table-sm mt-3">
+    <th>Curso</th>
+    <th>Profesor</th>
+    <th class="text-center">Acciones</th>
+  <tr *ngFor="let curso of _cursoService.list">
+    <td>{{ curso.nombre }}</td>
+    <td>{{ curso.profesorId.nombres }}</td>
+    <td>
+      <i
+        class="far fa-edit fa-lg text-info"
+        (click)="editarCurso(curso)"
+        style="cursor: pointer"
+      ></i>
+    </td>
+    <td>
+      <i
+        class="far fa-trash-alt fa-lg text-danger"
+        (click)="eliminarCurso(curso.id)"
+        style="cursor: pointer"
+      ></i>
+    </td>
+  </tr>
+</table>

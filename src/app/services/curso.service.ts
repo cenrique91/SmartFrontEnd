@@ -23,6 +23,7 @@ export class CursoService {
       .get(this.myAppUrl + this.myAPIUrl)
       .toPromise()
       .then((r) => {
+        console.log(r)
         this.list = r as Curso[];
       });
   }

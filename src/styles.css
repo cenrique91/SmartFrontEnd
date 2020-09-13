@@ -1,17 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
 input.ng-touched.ng-invalid {
-    border-color: #dc3545;
-  }
-  
-  input.ng-valid {
-    border-color: #28a745;
-  }
-  
-  .green-icon {
-    color: #28a745;
-  }
-  
-  .red-icon {
-    color: #dc3545;
-  }
-  
+  border-color: #dc3545;
+}
+
+input.ng-valid {
+  border-color: #28a745;
+}
+
+.green-icon {
+  color: #28a745;
+}
+
+.red-icon {
+  color: #dc3545;
+}
