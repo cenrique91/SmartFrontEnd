@@ -1,10 +1,10 @@
 export class Estudiante {
   id?: number;
-  nombre: string;
+  nombres: string;
+  apellidos
   dni: string;
   fechaNacimiento: Date;
   direccion: string;
   telefono: string;
   correo: string;
-  profesorId: { id: number };
 }

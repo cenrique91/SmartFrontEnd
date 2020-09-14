@@ -1,1 +1,33 @@
-<p>listaestudiante works!</p>
+<table class="table table-lg mt-3">
+  <th>Nombres</th>
+  <th>Apellidos</th>
+  <th>DNI</th>
+  <th>Fecha de Nacimiento</th>
+  <th>Direccion</th>
+  <th>Telefono</th>
+  <th>Correo</th>
+  <th>Acciones</th>
+  <tr *ngFor="let estudiante of _estudianteService.list">
+    <td>{{ estudiante.nombres }}</td>
+    <td>{{ estudiante.apellidos }}</td>
+    <td>{{ estudiante.dni }}</td>
+    <td>{{ estudiante.fechaNacimiento | date: 'dd/MM/yyyy' }}</td>
+    <td>{{ estudiante.direccion }}</td>
+    <td>{{ estudiante.telefono }}</td>
+    <td>{{ estudiante.correo }}</td>
+    <td> 
+      <i
+        class="far fa-edit fa-lg text-info"
+        (click)="editarEstudiante(estudiante)"
+        style="cursor: pointer"
+      ></i>
+    </td>
+    <td>
+      <i
+        class="far fa-trash-alt fa-lg text-danger"
+        (click)="eliminarEstudiante(estudiante.id)"
+        style="cursor: pointer"
+      ></i>
+    </td>
+  </tr>
+</table>

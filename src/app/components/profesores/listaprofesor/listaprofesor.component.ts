@@ -15,7 +15,7 @@ export class ListaprofesorComponent implements OnInit {
 
   ngOnInit(): void {
     this._profesorService.obtenerProfesores();
-  }
+  } 
 
   eliminarProfesor(id: number) {
     if (confirm('Está seguro que desea eliminar el registro?')) {

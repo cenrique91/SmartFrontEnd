@@ -17,7 +17,7 @@ export class ProfesorService {
   guardarProfesor(profesor: Profesor): Observable<Profesor> {
     return this.http.post<Profesor>(this.myAppUrl + this.myAPIUrl, profesor);
   }
-
+  
   obtenerProfesores() {
     this.http
       .get(this.myAppUrl + this.myAPIUrl)
