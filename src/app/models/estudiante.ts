@@ -6,5 +6,4 @@ export class Estudiante {
   direccion: string;
   telefono: string;
   correo: string;
-  profesorId: { id: number };
 }

@@ -44,6 +44,8 @@ export class ProfesorComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.idProfesor = 0;
+    console.log(this.idProfesor);
     this.subscription = this._profesorService
       .obtenerProfesor$()
       .subscribe((r) => {
@@ -67,7 +69,10 @@ export class ProfesorComponent implements OnInit, OnDestroy {
   }
 
   guardarProfesor() {
+    console.log('ENTRO EN guardarProfesor()');
+    console.log('IDPROFESOR ', this.idProfesor);
     if (this.idProfesor === 0) {
+      console.log('NUEVO PROFESOR');
       this.agregar();
     } else {
       this.editar();
@@ -85,6 +90,7 @@ export class ProfesorComponent implements OnInit, OnDestroy {
       correo: this.form.get('correo').value,
     };
 
+    console.log('EL PROFESOR QUE VA AL SERVICE ', profesor);
     this._profesorService.guardarProfesor(profesor).subscribe(
       (r) => {
         this.toastr.success('Registro agregado', 'El profesor fue agregado.');

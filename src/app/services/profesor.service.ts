@@ -15,6 +15,7 @@ export class ProfesorService {
   constructor(private http: HttpClient) {}
 
   guardarProfesor(profesor: Profesor): Observable<Profesor> {
+    console.log(profesor)
     return this.http.post<Profesor>(this.myAppUrl + this.myAPIUrl, profesor);
   }
 
